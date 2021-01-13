@@ -1,0 +1,92 @@
+<field-size-config>
+
+	<field_padding>35</field_padding>
+	<field_size_factor>1</field_size_factor>
+	<field_size_maximum>64</field_size_maximum>
+
+	<tablecol_size_factor>2.25</tablecol_size_factor>
+	<tablecol_size_default>65</tablecol_size_default>
+
+	<date_field_size>8</date_field_size>
+	<date_time_field_size>17</date_time_field_size>
+	<time_field_size>8</time_field_size>
+
+	<maxtype name="aln">
+		<range below="2"   size="2"/>
+		<range upper="30"  size="10"/>
+		<range upper="31"  size="40"/>
+	</maxtype>
+
+	<maxtype name="lower">
+		<range upper="2"   size="2"/>
+		<range upper="30"  size="10"/>
+		<range upper="31"  size="40"/>
+	</maxtype>
+
+	<maxtype name="upper">
+		<range upper="2"   size="2"/>
+		<range upper="30"  size="10"/>
+		<range upper="31"  size="40"/>
+	</maxtype>
+
+	<maxtype name="amount">
+		<range upper="12"  size="10"/>
+	</maxtype>
+
+	<maxtype name="crypto">
+		<range upper="12"  size="10"/>
+	</maxtype>
+
+	<maxtype name="decimal">
+		<range upper="12"  size="10"/>
+	</maxtype>
+
+	<maxtype name="float">
+		<range upper="12"  size="10"/>
+	</maxtype>
+
+	<maxtype name="integer">
+		<range upper="2"   size="2"/>
+	</maxtype>
+
+	<maxtype name="blob">
+		<range upper="100" size="100"/>
+	</maxtype>
+
+	<maxtype name="clob">
+		<range upper="100" size="100"/>
+	</maxtype>
+
+	<maxtype name="longaln">
+		<range upper="100" size="100"/>
+	</maxtype>
+
+	<maxtype name="date">
+		<range upper="10"  size="10"/>
+	</maxtype>
+
+	<maxtype name="datetime">
+		<range upper="17"  size="17"/>
+	</maxtype>
+
+	<maxtype name="time">
+		<range upper="5"   size="5"/>
+	</maxtype>
+
+	<maxtype name="duration">
+		<range upper="2"   size="2"/>
+	</maxtype>
+	
+	<maxtype name="smallint">
+		<range upper="2"   size="2"/>
+	</maxtype>
+
+	<maxtype name="gl">
+		<range upper="10"  size="44"/>
+	</maxtype>
+
+	<maxtype name="yorn">
+		<range upper="2"   size="2"/>
+	</maxtype>
+
+</field-size-config>

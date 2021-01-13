@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="MAXIMO_DEBUG" default="default" basedir=".">	<description> Build/Deploy an maximo EAR to WebSphere Application Server 6.1</description>
+
+	<property name="maximo.home" value="D:\IBM\SMP7508\maximo"/>
+	<property name="maximo.app.home" value="${maximo.home}\applications\maximo"/>
+
+	<property name="maximo.stubversion" value="1.2"/>
+
+
+	<property name="source.main"  	      	value="${basedir}\businessobjects\src"/>
+	<property name="source.web"  	      	value="${basedir}\maximouiweb\src"/>
+	
+	<property name="destination.main" 		value="${maximo.app.home}\businessobjects\classes"/>
+	<property name="destination.web"  		value="${maximo.app.home}\maximouiweb\webmodule\WEB-INF\classes"/>
+	
+	<property name="include.ix.handlers"       	value="ix\handlers\**\*.java"/>
+	<property name="include.custom.app"       	value="custom\app\**\*.java"/>
+	<property name="include.custom.common"      value="custom\common\**\*.java"/>
+	<property name="include.custom.util"        value="custom\util\**\*.java"/>
+	<property name="include.custom.workflow"    value="custom\workflow\**\*.java"/>
+	<!--property name="include.custom.integration" value="custom\integration\**\*.java"/-->
+	
+	<property name="include.custom.web.webclient"   value="custom\webclient\**\*.java"/>
+
+	
+	<property name="include.rmic.app.1"        value="custom\app\a*\**.class"/>
+	<property name="include.rmic.app.2"        value="custom\app\b*\**.class"/>
+	<property name="include.rmic.app.3"        value="custom\app\c*\**.class"/>
+	<property name="include.rmic.app.4"        value="custom\app\i*\**.class"/>
+	<property name="include.rmic.app.5"        value="custom\app\l*\**.class"/>
+	<property name="include.rmic.app.6"        value="custom\app\m*\**.class"/>
+	<property name="include.rmic.app.7"        value="custom\app\o*\**.class"/>
+	<property name="include.rmic.app.8"        value="custom\app\p*\**.class"/>
+	<property name="include.rmic.app.9"        value="custom\app\q*\**.class"/>
+	<property name="include.rmic.app.10"       value="custom\app\r*\**.class"/>
+	<property name="include.rmic.app.11"       value="custom\app\s*\**.class"/>	
+	<property name="include.rmic.app.12"       value="custom\app\t*\**.class"/>		
+	<property name="include.rmic.app.13"       value="custom\app\v*\**.class"/>
+	<property name="include.rmic.app.14"       value="custom\app\w*\**.class"/>
+	<property name="include.rmic.app.15"       value="custom\app\j*\**.class"/>
+	<property name="include.rmic.app.16"       value="custom\app\f*\**.class"/>
+	<property name="include.rmic.app.17"       value="custom\app\a*\virtual\**.class"/>
+	<property name="include.rmic.app.18"       value="custom\app\b*\virtual\**.class"/>
+	<property name="include.rmic.app.19"       value="custom\app\c*\virtual\**.class"/>
+	<property name="include.rmic.app.20"       value="custom\app\i*\virtual\**.class"/>
+	<property name="include.rmic.app.21"       value="custom\app\l*\virtual\**.class"/>
+	<property name="include.rmic.app.22"       value="custom\app\o*\virtual\**.class"/>
+	<property name="include.rmic.app.23"       value="custom\app\q*\virtual\**.class"/>
+	<property name="include.rmic.app.24"       value="custom\app\r*\virtual\**.class"/>
+	<property name="include.rmic.app.25"       value="custom\app\w*\virtual\**.class"/>
+	<property name="include.rmic.app.26"       value="custom\app\p*\virtual\**.class"/>
+	<property name="include.rmic.app.27"       value="custom\app\s*\virtual\**.class"/>
+	<property name="include.rmic.app.28"       value="custom\app\t*\virtual\**.class"/>
+	<property name="include.rmic.app.29"       value="custom\app\m*\virtual\**.class"/>
+	<property name="include.rmic.app.30"       value="custom\app\**\**.class"/>
+	<property name="include.rmic.app.31"       value="custom\app\**\virtual\**.class"/>	
+	<property name="include.rmic.cdir.1"       value="custom\cdir\c*\*.class"/>
+	<property name="include.rmic.cdir.2"       value="custom\cdir\**\*.class"/>
+	<property name="include.rmic.common"       value="custom\common\**\*.class"/>
+	<property name="include.rmic.workflow"     value="custom\workflow\**\*.class"/>
+		
+    <target name="default" depends="rmic.businessobject">
+    </target>
+	
+	<target name="rmic.businessobject"  depends="compile.javac.businessobjects" description="RMIC classes of businessobjects">
+		<rmic base="${destination.main}" includes="${include.rmic.app.1}"       stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.2}"       stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.3}"       stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.4}"       stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.5}"       stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.6}"       stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.7}"       stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.8}"       stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.9}"       stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.10}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.11}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.12}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.13}"      stubversion="${maximo.stubversion}" verify="true"/>		
+		<rmic base="${destination.main}" includes="${include.rmic.app.14}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.15}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.16}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.17}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.18}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.19}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.20}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.21}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.22}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.23}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.24}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.25}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.26}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.27}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.28}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.29}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.30}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.app.31}"      stubversion="${maximo.stubversion}" verify="true"/>		
+		<rmic base="${destination.main}" includes="${include.rmic.cdir.1}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.cdir.2}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.ebusiness.1}" stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.ebusiness.2}" stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.ebusiness.3}" stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.common}"      stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.workflow}"    stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.espir}"       stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.plusd}"    	stubversion="${maximo.stubversion}" verify="true"/>
+		<rmic base="${destination.main}" includes="${include.rmic.plust}"       stubversion="${maximo.stubversion}" verify="true"/>		
+		<!--rmic base="${destination.main}" includes="${include.rmic.ithd}"        stubversion="${maximo.stubversion}" verify="true"/-->
+	</target>
+	
+
+	
+	<target name="compile.javac.businessobjects" description="Compile fetched business objects java files">
+		<javac debug="true" srcdir="${source.main}" destdir="${destination.main}" classpath="${maximo.app.home}\lib\jsr181.jar;${maximo.app.home}\lib\jackrabbit-webdav-2.1.1.jar;${maximo.app.home}\lib\commons-httpclient.jar;${maximo.app.home}\lib\poi-3.5.jar;${maximo.app.home}\lib\j2ee.jar;${maximo.app.home}\lib\javacsv.jar;${maximo.app.home}\lib\jbex-v1.4.7-pro.jar;${maximo.app.home}\lib\jcifs-1.3.15.jar;${maximo.app.home}\lib\commons-codec-1.4.jar;${destination.main};${destination.web};" includes="${include.custom.app}"       	source="1.7" target="1.7"/>	
+		<javac debug="true" srcdir="${source.main}" destdir="${destination.main}" classpath="${maximo.app.home}\lib\jsr181.jar;${maximo.app.home}\lib\jackrabbit-webdav-2.1.1.jar;${maximo.app.home}\lib\commons-httpclient.jar;${maximo.app.home}\lib\poi-3.5.jar;${maximo.app.home}\lib\j2ee.jar;${maximo.app.home}\lib\javacsv.jar;${maximo.app.home}\lib\jbex-v1.4.7-pro.jar;${maximo.app.home}\lib\jcifs-1.3.15.jar;${maximo.app.home}\lib\commons-codec-1.4.jar;${destination.main};${destination.web};" includes="${include.ix.handlers}"       	source="1.7" target="1.7"/>
+		<javac debug="true" srcdir="${source.main}" destdir="${destination.main}" classpath="${maximo.app.home}\lib\jsr181.jar;${maximo.app.home}\lib\jackrabbit-webdav-2.1.1.jar;${maximo.app.home}\lib\commons-httpclient.jar;${maximo.app.home}\lib\poi-3.5.jar;${maximo.app.home}\lib\j2ee.jar;${maximo.app.home}\lib\javacsv.jar;${maximo.app.home}\lib\jcifs-1.3.15.jar;${destination.main};${destination.web};" includes="${include.custom.common}"    	source="1.7" target="1.7"/>
+		<javac debug="true" srcdir="${source.main}" destdir="${destination.main}" classpath="${maximo.app.home}\lib\jsr181.jar;${maximo.app.home}\lib\jackrabbit-webdav-2.1.1.jar;${maximo.app.home}\lib\commons-httpclient.jar;${maximo.app.home}\lib\poi-3.5.jar;${maximo.app.home}\lib\j2ee.jar;${maximo.app.home}\lib\javacsv.jar;${maximo.app.home}\lib\jcifs-1.3.15.jar;${destination.main};${destination.web};" includes="${include.custom.cdir}"      	source="1.7" target="1.7"/>
+		<javac debug="true" srcdir="${source.main}" destdir="${destination.main}" classpath="${maximo.app.home}\lib\jsr181.jar;${maximo.app.home}\lib\jackrabbit-webdav-2.1.1.jar;${maximo.app.home}\lib\commons-httpclient.jar;${maximo.app.home}\lib\poi-3.5.jar;${maximo.app.home}\lib\j2ee.jar;${maximo.app.home}\lib\javacsv.jar;${maximo.app.home}\lib\jcifs-1.3.15.jar;${destination.main};${destination.web};" includes="${include.custom.util}"      	source="1.7" target="1.7"/>
+		<javac debug="true" srcdir="${source.main}" destdir="${destination.main}" classpath="${maximo.app.home}\lib\jsr181.jar;${maximo.app.home}\lib\jackrabbit-webdav-2.1.1.jar;${maximo.app.home}\lib\commons-httpclient.jar;${maximo.app.home}\lib\poi-3.5.jar;${maximo.app.home}\lib\j2ee.jar;${maximo.app.home}\lib\javacsv.jar;${maximo.app.home}\lib\jcifs-1.3.15.jar;${destination.main};${destination.web};" includes="${include.custom.workflow}"  	source="1.7" target="1.7"/>
+		<javac debug="true" srcdir="${source.main}" destdir="${destination.main}" classpath="${maximo.app.home}\lib\jsr181.jar;${maximo.app.home}\lib\jackrabbit-webdav-2.1.1.jar;${maximo.app.home}\lib\commons-httpclient.jar;${maximo.app.home}\lib\poi-3.5.jar;${maximo.app.home}\lib\j2ee.jar;${maximo.app.home}\lib\javacsv.jar;${maximo.app.home}\lib\jcifs-1.3.15.jar;${destination.main};${destination.web};" includes="${include.custom.espir}"      source="1.7" target="1.7"/>
+		
+					
+		<javac debug="true" srcdir="${source.web}"  destdir="${destination.web}"  classpath="${maximo.app.home}\lib\jsr181.jar;${maximo.app.home}\lib\jackrabbit-webdav-2.1.1.jar;${maximo.app.home}\lib\commons-httpclient.jar;${maximo.app.home}\lib\poi-3.5.jar;${maximo.app.home}\lib\j2ee.jar;${maximo.app.home}\lib\javacsv.jar;${maximo.app.home}\lib\commons-codec-1.4.jar;${destination.main};${destination.web};" includes="${include.custom.web.webclient}"  source="1.7" target="1.7"/>
+		<javac debug="true" srcdir="${source.web}"  destdir="${destination.web}"  classpath="${maximo.app.home}\lib\jsr181.jar;${maximo.app.home}\lib\jackrabbit-webdav-2.1.1.jar;${maximo.app.home}\lib\commons-httpclient.jar;${maximo.app.home}\lib\poi-3.5.jar;${maximo.app.home}\lib\j2ee.jar;${maximo.app.home}\lib\javacsv.jar;${destination.main};${destination.web};" includes="${include.custom.web.cdir}"       source="1.7" target="1.7"/>
+	</target>		
+</project>
